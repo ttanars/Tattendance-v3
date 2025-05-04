@@ -523,6 +523,7 @@
                                 successData = { thaiDateTime, status, photoDataUrl };
                             } else { throw new Error(fetchResult.message || 'Unknown server error'); }
                         } catch (error) { console.error('Submit Error:', error); if (Swal.isLoading()) Swal.close(); showSweetAlert('error', 'Submit Failed', `Error: ${error.message}`);
+				resetFullForm();
                         } finally {
                             if (Swal.isLoading()) Swal.close(); isSubmitting = false;
                             if (fetchSuccess && successData) {
